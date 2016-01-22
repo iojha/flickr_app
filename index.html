@@ -20,21 +20,26 @@
 <div class="container">
 
 	<section id="search-bar" ng-controller="searchCtrl">
-		<div class="row">
+		<div class="row" id="heading">
 			<h1>flicker search</h1>
 		</div>
 	
 
-		<form ng-submit="submit(query)">
-        <input type="text" name="query" ng-model="query" required="" />
-        <input type="submit" value="Submit" id="submit"/>
-      </form>
-      <div class="results" ng-if="results">
-        <h2>We found {{ results.length }} results for {{ query }}</h2>
-        <div ng-repeat="result in results">
-          <img ng-src="{{ '"https://farm' + {farmId} + '.staticflickr.com/' + {serverId} + '/' + {id} +'_'+{secret}+'.jpg"'}}" width="400" height="400"></img>
-        </div>
-      </div>
+		<form ng-submit="submit(query)" class="col-sm-8 col-sm-offset-2">
+        	<input type="text" name="query" ng-model="query" required="" class="col-sm-10"/>
+        	<input type="submit" value="Submit" id="submit" class="col-sm-2"/>
+      	</form>
+      
+      	<div class="results" ng-if="results">
+      		<div class="row">
+      			<div class="col-sm-6 col-sm-offset-3">
+        			<h4>We found {{ results.length }} results for {{ query }}</h4>
+        		</div>
+        	</div>
+        	<div ng-repeat="result in results">
+          		<img ng-src="https://farm{{result.farm}}.staticflickr.com/{{result.server}}/{{result.id}}_{{result.secret}}.jpg" class="image-inner col-sm-2"></img>
+       		 </div>
+     	</div>
 	
 	
 

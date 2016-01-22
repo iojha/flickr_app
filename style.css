@@ -2,3 +2,22 @@ h1 {
 	text-transform: uppercase;
 	text-align: center;
 }
+
+h4 {
+	text-align: center;
+}
+
+.heading {
+	margin: 20px 20px;
+}
+
+.results {
+	margin-top: 100px;
+}
+
+.image-inner {
+	height: 200px;
+	margin: 20px 20px;
+	display: inline-block;
+	border: 2px solid yellow;
+}
